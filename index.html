@@ -2,236 +2,307 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Harmanpreet Singh Analytics Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harmanpreet Singh — Analytics Portfolio</title>
+<meta name="description" content="Harmanpreet Singh — data, business intelligence and regulatory reporting analyst. Power BI, Excel, SQL, data validation and reconciliation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
-/* Layout: a single reading column of case studies, each pairing a short story with a flow diagram of how the solution works. */
-:root{
-  --bg:#F5F7F8; --card:#FFFFFF; --ink:#13202A; --muted:#566573; --line:#D8E0E5;
-  --accent:#0E6B66; --accent-soft:#E2F1EF; --signal:#C8701E; --signal-soft:#FBEBDB;
-  --display:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
-  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E151B; --card:#152029; --ink:#E4EBEF; --muted:#94A3AF; --line:#25333E;
-  --accent:#43B7AE; --accent-soft:#16302F; --signal:#EE9F4E; --signal-soft:#36261A; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0E151B; --card:#152029; --ink:#E4EBEF; --muted:#94A3AF; --line:#25333E;
-  --accent:#43B7AE; --accent-soft:#16302F; --signal:#EE9F4E; --signal-soft:#36261A; color-scheme:dark}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.wrap{max-width:960px;margin:0 auto;padding-block:40px 64px;display:flex;flex-direction:column;gap:48px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
-h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-.01em}
-h2{font-size:1.6rem;font-weight:600}
-h3{font-size:1.25rem;font-weight:600}
-p{margin:0;max-width:66ch}
-.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.muted{color:var(--muted)}
-header{display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(--line);padding-bottom:28px}
-.contact{display:flex;flex-wrap:wrap;gap:8px 24px;font-family:var(--mono);font-size:.85rem;color:var(--muted)}
-.contact span{user-select:all}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:4px}
-.stat b{font-family:var(--display);font-size:2rem;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
-.stat span{font-size:.85rem;color:var(--muted)}
-section{display:flex;flex-direction:column;gap:20px}
-.case{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;padding-top:24px;border-top:1px solid var(--line)}
-.case .meta{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-family:var(--mono);font-size:.72rem;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
-.tag.warn{background:var(--signal-soft);color:var(--signal)}
-.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;overflow-x:auto}
-.node{flex:1 1 140px;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:.85rem}
-.node small{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
-.node.out{border-color:var(--accent);background:var(--accent-soft)}
-.arrow{align-self:center;color:var(--muted);font-family:var(--mono)}
-.result{border-left:3px solid var(--accent);padding:4px 0 4px 12px;font-weight:500}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.panel svg{width:100%;height:auto;display:block}
-.note{font-size:.82rem;color:var(--muted)}
-.sample{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border:1px dashed var(--signal);color:var(--signal);border-radius:4px}
-.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.kpi{border:1px solid var(--line);border-radius:6px;padding:10px}
-.kpi b{display:block;font-family:var(--display);font-size:1.4rem;font-variant-numeric:tabular-nums}
-.kpi span{font-size:.75rem;color:var(--muted)}
-ul.tools{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-ul.tools li{font-size:.85rem;padding:5px 10px;border:1px solid var(--line);border-radius:4px;background:var(--card)}
-ul.tools li em{font-style:normal;color:var(--muted);font-size:.78rem}
-.edu{display:grid;gap:6px;font-size:.92rem}
-footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
-svg text{fill:var(--muted);font-family:var(--mono);font-size:11px}
-@media (max-width:520px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.arrow{display:none}.node{flex-basis:100%}}
-@media print{body{background:#fff}.wrap{padding-block:0}.case,.panel,.stat{break-inside:avoid}}
-</style>
+  :root{
+    --bg:#f6f8fb; --panel:#ffffff; --ink:#15223a; --muted:#51607a;
+    --accent:#1f4e79; --accent2:#2e6ca4; --line:#dfe6ef; --chip:#eaf1f8;
+    --shadow:0 1px 2px rgba(20,34,58,.06),0 8px 24px rgba(20,34,58,.06);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#0e1420; --panel:#151d2c; --ink:#eaf0f8; --muted:#9fb0c7;
+    --accent:#7db3e6; --accent2:#9ccbf2; --line:#243247; --chip:#1c2738;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0e1420; --panel:#151d2c; --ink:#eaf0f8; --muted:#9fb0c7;
+    --accent:#7db3e6; --accent2:#9ccbf2; --line:#243247; --chip:#1c2738;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;
+    padding-left:max(20px,env(safe-area-inset-left,0px));
+    padding-right:max(20px,env(safe-area-inset-right,0px));}
+  h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;text-wrap:balance;margin:0}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);font-weight:600}
 
+  /* Hero */
+  header.hero{padding-block:54px 30px}
+  .hero h1{font-size:2.5rem;color:var(--ink);margin-top:10px}
+  .hero .role{font-family:"Space Grotesk";font-size:1.18rem;color:var(--accent);font-weight:600;margin-top:8px}
+  .hero p.lede{font-size:1.06rem;color:var(--muted);margin:16px 0 0;max-width:68ch}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;font-size:.84rem;color:var(--ink);white-space:nowrap}
+  .chip b{color:var(--accent2);font-weight:600}
+
+  section{padding-block:26px;border-top:1px solid var(--line)}
+  section h2{font-size:1.42rem;color:var(--ink)}
+  section .sub{color:var(--muted);margin:6px 0 18px;max-width:70ch}
+
+  /* Stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px 16px;box-shadow:var(--shadow)}
+  .stat .n{font-family:"Space Grotesk";font-size:1.6rem;font-weight:700;color:var(--accent)}
+  .stat .l{font-size:.84rem;color:var(--muted);margin-top:4px}
+
+  /* Timeline */
+  .tl{display:flex;flex-direction:column;gap:2px}
+  .job{display:grid;grid-template-columns:168px 1fr;gap:18px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .job:last-child{border-bottom:0}
+  .job .when{color:var(--muted);font-size:.9rem;font-weight:500}
+  .job .what .t{font-weight:600;font-size:1.02rem}
+  .job .what .o{color:var(--muted);font-size:.92rem;margin-bottom:5px}
+  .job .what ul{margin:6px 0 0;padding-left:18px}
+  .job .what li{margin:3px 0;color:var(--ink)}
+
+  /* Cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 18px;box-shadow:var(--shadow)}
+  .card h3{font-size:1.06rem;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .card p{margin:9px 0 0;color:var(--muted);font-size:.95rem}
+  .tag{display:inline-block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent2);background:var(--chip);border:1px solid var(--line);
+    border-radius:6px;padding:2px 7px;font-weight:600}
+  .inprog{color:#b4791f}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .inprog{color:#e0b05a}}
+  :root[data-theme="dark"] .inprog{color:#e0b05a}
+
+  /* Dashboard sample */
+  .dash{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+  .panel .ph{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+  .panel .ph .ttl{font-weight:600}
+  .kpis{display:flex;gap:18px;flex-wrap:wrap}
+  .kpi .n{font-family:"Space Grotesk";font-size:1.5rem;font-weight:700;color:var(--accent)}
+  .kpi .l{font-size:.78rem;color:var(--muted)}
+  .bars{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+  .bar{display:grid;grid-template-columns:92px 1fr 34px;align-items:center;gap:10px;font-size:.84rem}
+  .bar .track{height:9px;background:var(--chip);border-radius:6px;overflow:hidden}
+  .bar .fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:6px}
+  .note{font-size:.76rem;color:var(--muted);margin-top:12px;font-style:italic}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .sk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow)}
+  .sk .h{font-weight:600;color:var(--accent);font-size:.95rem;margin-bottom:7px}
+  .sk .list{display:flex;flex-wrap:wrap;gap:6px}
+  .sk .list span{font-size:.82rem;background:var(--chip);border:1px solid var(--line);border-radius:7px;padding:3px 9px}
+
+  /* Education */
+  .edu{display:flex;flex-direction:column;gap:10px}
+  .ed{display:grid;grid-template-columns:1fr auto;gap:14px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+  .ed:last-child{border-bottom:0}
+  .ed .d{color:var(--muted);font-size:.88rem;white-space:nowrap}
+
+  footer{border-top:1px solid var(--line);padding-block:26px 46px;color:var(--muted);font-size:.9rem}
+  footer a{font-weight:500}
+
+  @media (max-width:720px){
+    .hero h1{font-size:2rem}
+    .stats{grid-template-columns:1fr 1fr}
+    .cards,.dash,.skills{grid-template-columns:1fr}
+    .job{grid-template-columns:1fr;gap:4px}
+    .job .when{font-weight:600;color:var(--accent2)}
+    .ed{grid-template-columns:1fr}
+    .ed .d{white-space:normal}
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <span class="eyebrow">Analytics portfolio</span>
-  <h1>Harmanpreet Singh</h1>
-  <p>Data, business intelligence and business systems analyst. I build Power BI reporting, automate the work around it, and bring six-plus years of workforce scheduling to every operational problem.</p>
-  <div class="contact">
-    <span>harman15608@gmail.com</span>
-    <span>+1 672-878-2400</span>
-    <span>Chestermere, AB</span>
-    <span>Canadian citizen</span>
-  </div>
-</header>
-
-<section aria-label="At a glance">
-  <div class="stats">
-    <div class="stat"><b>~25</b><span>Power BI reports a month for NHS, service desk and corporate stakeholders</span></div>
-    <div class="stat"><b>~14</b><span>NHS Scotland Health Boards supported with secured reporting</span></div>
-    <div class="stat"><b>5 h</b><span>saved per working day, at most, through reporting and email automation</span></div>
-    <div class="stat"><b>6+ yrs</b><span>of workforce scheduling and resource planning</span></div>
-  </div>
-</section>
-
-<section>
-  <span class="eyebrow">Selected work</span>
-  <h2>How I turn data into action</h2>
-  <p class="muted">Each example shows the real workflow I built or support. Client data is confidential, so figures are described rather than shown.</p>
-
-  <article class="case">
-    <div class="meta"><span class="tag">Power BI</span><span class="tag">Power Automate</span><span class="tag">Microsoft Teams</span></div>
-    <h3>SLA early-warning alerts</h3>
-    <p>Reporting showed tickets reaching their SLA deadline before anyone noticed. I helped design and launch a workflow that uses Power BI data to spot tickets nearing expiry and alerts the assigned engineer in Microsoft Teams, so they can act in time.</p>
-    <div class="flow" role="img" aria-label="Service desk data flows into a Power BI model, a Power Automate flow checks for tickets near SLA expiry, and a Teams alert reaches the engineer">
-      <div class="node"><small>Source</small>Service-management tickets</div><span class="arrow">→</span>
-      <div class="node"><small>Model</small>Power BI dataset with SLA timers</div><span class="arrow">→</span>
-      <div class="node"><small>Check</small>Power Automate finds tickets nearing expiry</div><span class="arrow">→</span>
-      <div class="node out"><small>Action</small>Teams alert to the engineer</div>
+  <header class="hero">
+    <div class="eyebrow">Analytics Portfolio</div>
+    <h1>Harmanpreet Singh</h1>
+    <div class="role">Data, Business Intelligence &amp; Regulatory Reporting Analyst</div>
+    <p class="lede">I collect, clean, validate and reconcile data from multiple sources, then turn it into
+      Power BI and Excel reporting that stakeholders can trust to make sound, well-governed decisions.
+      Six-plus years across healthcare, service operations and workforce scheduling.</p>
+    <div class="chips">
+      <span class="chip">📍 Chestermere, AB</span>
+      <span class="chip">🇨🇦 Canadian citizen — no sponsorship needed</span>
+      <span class="chip">✉️ <b>harman15608@gmail.com</b></span>
+      <span class="chip">📞 +1 672-878-2400</span>
     </div>
-    <p class="result">Failed SLA counts fell after launch.</p>
-  </article>
+  </header>
 
-  <article class="case">
-    <div class="meta"><span class="tag">SQL</span><span class="tag">Power Query</span><span class="tag">DAX</span><span class="tag">Row-level security</span></div>
-    <h3>Secure reporting for healthcare and corporate clients</h3>
-    <p>I produce about 25 Power BI reports a month on service volumes, SLA performance, workloads, trends and resolution activity. Data comes from the Datto data warehouse and service-management systems, and each NHS Health Board sees only its own data.</p>
-    <div class="flow" role="img" aria-label="Warehouse and service data are queried with SQL and Power Query, modelled with DAX, then published with row-level security to about 14 Health Boards">
-      <div class="node"><small>Extract</small>Datto data warehouse and service systems</div><span class="arrow">→</span>
-      <div class="node"><small>Clean</small>SQL and Power Query</div><span class="arrow">→</span>
-      <div class="node"><small>Model</small>Semantic model and DAX measures</div><span class="arrow">→</span>
-      <div class="node out"><small>Publish</small>Row-level security, refresh and access for ~14 Health Boards</div>
+  <section>
+    <div class="stats">
+      <div class="stat"><div class="n">~25/mo</div><div class="l">Power BI reports produced each month</div></div>
+      <div class="stat"><div class="n">~14</div><div class="l">NHS Scotland Health Boards, with row-level security</div></div>
+      <div class="stat"><div class="n">Up to 5 h</div><div class="l">saved per working day through automation</div></div>
+      <div class="stat"><div class="n">6+ yrs</div><div class="l">workforce scheduling &amp; resource planning</div></div>
     </div>
-    <p class="result">Reports are reconciled with operational records, and calculation logic, controls and limitations are documented.</p>
-  </article>
+  </section>
 
-  <article class="case">
-    <div class="meta"><span class="tag">Power Query</span><span class="tag">Data quality</span></div>
-    <h3>Validating outstanding tickets against the warehouse</h3>
-    <p>For one client, I built a Power Query process that matches outstanding tickets against a large warehouse lookup. Connection-only queries keep the model light, and preserved source columns let anyone trace a result back to its origin.</p>
-    <div class="flow" role="img" aria-label="Outstanding tickets and a warehouse lookup are matched in Power Query with source columns preserved for validation">
-      <div class="node"><small>Input</small>Outstanding tickets</div><span class="arrow">+</span>
-      <div class="node"><small>Input</small>Large warehouse lookup</div><span class="arrow">→</span>
-      <div class="node"><small>Match</small>Connection-only Power Query merge</div><span class="arrow">→</span>
-      <div class="node out"><small>Check</small>Source columns kept for validation</div>
-    </div>
-    <p class="result">I also analysed 24 months of ticket and SLA data for a client and prepared a management-ready interpretation.</p>
-  </article>
+  <section>
+    <h2>Focus</h2>
+    <p class="sub">Collecting, validating and reconciling data from relational databases and semi-structured
+      sources; building Power BI and Excel reporting for performance monitoring and compliance reporting;
+      SQL, Power Query and DAX; and automating repetitive reporting with Power Automate and approved
+      Microsoft Copilot (with manual checking). Comfortable gathering requirements directly from managers,
+      engineers and non-technical stakeholders and translating them into working solutions.</p>
+  </section>
 
-  <article class="case">
-    <div class="meta"><span class="tag">Excel VBA</span><span class="tag">Outlook</span><span class="tag">Power Automate</span></div>
-    <h3>Automating recurring reporting</h3>
-    <p>Recurring reports and the emails around them used to be built by hand. I automated them with Excel VBA, Outlook and Power Automate.</p>
-    <p class="result">Up to five hours saved per working day.</p>
-  </article>
-
-  <article class="case">
-    <div class="meta"><span class="tag">Power Apps</span><span class="tag">SharePoint</span><span class="tag">Microsoft Lists</span><span class="tag warn">In progress</span></div>
-    <h3>Leave-management solution, built end to end</h3>
-    <p>I am designing and building a leave-management solution: the Power Apps front end, SharePoint and Microsoft Lists data, Power Automate approval logic, permissions and integrations. I mapped the current and future approval process, set the business rules, and run functional, negative and regression testing before each change.</p>
-    <div class="flow" role="img" aria-label="Staff request leave in Power Apps, data is stored in Microsoft Lists, Power Automate routes approvals, and permissions control who sees what">
-      <div class="node"><small>Request</small>Power Apps form</div><span class="arrow">→</span>
-      <div class="node"><small>Store</small>SharePoint and Microsoft Lists</div><span class="arrow">→</span>
-      <div class="node"><small>Approve</small>Power Automate approval logic</div><span class="arrow">→</span>
-      <div class="node out"><small>Control</small>Permissions and testing</div>
-    </div>
-  </article>
-
-  <article class="case">
-    <div class="meta"><span class="tag">Autotask</span><span class="tag">Procura</span><span class="tag">Q-care</span><span class="tag">Workforce planning</span></div>
-    <h3>Scheduling people and vehicles ahead of demand</h3>
-    <p>I plan and schedule workloads for about 28 engineers in Autotask and manage the booking calendars for the team's company vans, anticipating demand and allocating people and vehicles ahead of time. Before that, I scheduled about 400 healthcare employees at Shared Health and about 350 caregivers supporting around 900 clients at CBI Home Health in Winnipeg.</p>
-    <p class="result">Six-plus years of balancing demand, availability and urgent changes.</p>
-  </article>
-</section>
-
-<section>
-  <span class="eyebrow">Report design</span>
-  <h2>What my dashboards look like</h2>
-  <p class="muted"><span class="sample">Sample data</span> These panels recreate the layout I use for service reporting with made-up numbers. Real client dashboards are confidential.</p>
-  <div class="cols">
-    <div class="panel">
-      <h3>SLA performance</h3>
-      <div class="kpis">
-        <div class="kpi"><b>94%</b><span>Met SLA</span></div>
-        <div class="kpi"><b>312</b><span>Tickets closed</span></div>
-        <div class="kpi"><b>3.1 h</b><span>Avg first response</span></div>
+  <section>
+    <h2>Experience</h2>
+    <p class="sub">Recent, hands-on experience building and validating reporting from multiple data sources.</p>
+    <div class="tl">
+      <div class="job">
+        <div class="when">Apr 2022 – Present</div>
+        <div class="what">
+          <div class="t">Support Administrator — Data, Reporting &amp; BI</div>
+          <div class="o">Microtech Support Limited · Kilmarnock, Scotland</div>
+          <ul>
+            <li>Collect, clean, validate and maintain data from a SQL data warehouse and the Autotask service-management system; reconcile against operational records and document calculation logic, controls and limitations.</li>
+            <li>Produce ~25 Power BI reports a month with semantic models, Power Query and DAX, applying row-level security across ~14 NHS Scotland Health Boards.</li>
+            <li>Build Power Automate automation (SLA early-warning alerts, a morning priorities brief) and own the SharePoint / Microsoft Lists back end of an in-progress leave-management solution.</li>
+          </ul>
+        </div>
       </div>
-      <svg viewBox="0 0 320 150" role="img" aria-label="Sample line chart of weekly SLA met percentage rising from 88 to 96 percent over 12 weeks">
-        <g stroke="var(--line)" stroke-width="1">
-          <line x1="36" y1="20" x2="310" y2="20"/><line x1="36" y1="60" x2="310" y2="60"/><line x1="36" y1="100" x2="310" y2="100"/><line x1="36" y1="130" x2="310" y2="130"/>
-        </g>
-        <text x="4" y="24">100%</text><text x="8" y="64">95%</text><text x="8" y="104">90%</text><text x="8" y="134">86%</text>
-        <polygon fill="var(--accent-soft)" points="40,114 64,122 88,106 112,130 136,98 160,90 184,74 208,66 232,66 256,58 280,50 304,50 304,130 40,130"/>
-        <polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" points="40,114 64,122 88,106 112,130 136,98 160,90 184,74 208,66 232,66 256,58 280,50 304,50"/>
-        <circle cx="304" cy="50" r="4" fill="var(--accent)"/>
-        <line x1="148" y1="20" x2="148" y2="130" stroke="var(--signal)" stroke-dasharray="4 3"/>
-        <text x="152" y="32" style="fill:var(--signal)">alerts launched</text>
-        <text x="36" y="146">Wk 1</text><text x="282" y="146">Wk 12</text>
-      </svg>
-      <p class="note">Weekly SLA met, with a marker where an early-warning alert goes live.</p>
+      <div class="job">
+        <div class="when">Jan 2021 – Mar 2022</div>
+        <div class="what">
+          <div class="t">Scheduling Coordinator</div>
+          <div class="o">Shared Health · Winnipeg, MB</div>
+          <ul>
+            <li>Managed schedules affecting ~400 healthcare employees; handled confidential scheduling, timekeeping and payroll data and investigated discrepancies.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Jan 2018 – Oct 2018</div>
+        <div class="what">
+          <div class="t">Scheduling Coordinator</div>
+          <div class="o">CBI Home Health · Winnipeg, MB</div>
+          <ul>
+            <li>Scheduled ~350 caregivers supporting ~900 clients in Procura and Q-care; handled urgent coverage changes and trained new employees.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Nov 2016 – Feb 2018</div>
+        <div class="what">
+          <div class="t">Technical Service Representative</div>
+          <div class="o">Shaw Communications · Winnipeg, MB</div>
+          <ul>
+            <li>Resolved customer issues in a high-volume contact centre using ServiceNow; managed escalations and trained ~20 employees.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="panel">
-      <h3>Workload by team</h3>
-      <svg viewBox="0 0 320 170" role="img" aria-label="Sample horizontal bar chart of open tickets by team: Field 46, Remote 38, Projects 24, Hardware 17, Onboarding 9">
-        <g font-size="11">
-          <text x="0" y="24">Field</text><rect x="80" y="12" width="207" height="16" rx="2" fill="var(--accent)"/><text x="292" y="24">46</text>
-          <text x="0" y="56">Remote</text><rect x="80" y="44" width="171" height="16" rx="2" fill="var(--accent)"/><text x="256" y="56">38</text>
-          <text x="0" y="88">Projects</text><rect x="80" y="76" width="108" height="16" rx="2" fill="var(--accent)"/><text x="193" y="88">24</text>
-          <text x="0" y="120">Hardware</text><rect x="80" y="108" width="77" height="16" rx="2" fill="var(--accent)"/><text x="162" y="120">17</text>
-          <text x="0" y="152">Onboarding</text><rect x="80" y="140" width="41" height="16" rx="2" fill="var(--signal)"/><text x="126" y="152">9</text>
-        </g>
-      </svg>
-      <p class="note">Open tickets by team, used to balance engineer workloads before they become backlogs.</p>
+  </section>
+
+  <section>
+    <h2>Selected work</h2>
+    <p class="sub">Examples from real roles. Figures are drawn from my own work; dashboard panels below use sample data.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Collecting &amp; reconciling data from multiple sources</h3>
+        <p>A Power Query process that matches outstanding tickets against a large data-warehouse lookup, with connection-only queries and preserved source columns, so every reported figure is traceable to source. Plus a 24-month ticket and SLA analysis for a client, reconciled and explained to management.</p>
+      </div>
+      <div class="card">
+        <h3>Secure reporting for healthcare &amp; corporate clients</h3>
+        <p>Monthly Power BI reports from the data warehouse covering service volumes, SLA performance, workloads and trends — with row-level security so each of ~14 NHS Scotland Health Boards sees only its own data.</p>
+      </div>
+      <div class="card">
+        <h3>SLA early-warning alerts</h3>
+        <p>A Power BI + Power Automate workflow that alerts engineers in Microsoft Teams before tickets breach SLA. Failed SLA counts fell after launch.</p>
+      </div>
+      <div class="card">
+        <h3>Automating recurring reporting</h3>
+        <p>Recurring reporting and email administration automated with Excel VBA, Outlook and Power Automate, plus a morning priorities brief that compiles the day's priority items — saving up to five hours per working day.</p>
+      </div>
+      <div class="card">
+        <h3>Leave-management solution, built end to end <span class="tag inprog">In progress</span></h3>
+        <p>Power Apps front end with a SharePoint and Microsoft Lists back end and Power Automate approval logic. I own the back-end data, permissions and integrations, and run functional, negative and regression testing.</p>
+      </div>
+      <div class="card">
+        <h3>Scheduling people &amp; vehicles ahead of demand</h3>
+        <p>Planning for ~28 engineers in Autotask and company-van bookings, anticipating demand. Earlier, ~400 employees at Shared Health and ~350 caregivers serving ~900 clients at CBI Home Health.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <span class="eyebrow">Toolkit</span>
-  <h2>Tools I use</h2>
-  <ul class="tools">
-    <li>Power BI Desktop and Service</li><li>DAX</li><li>Power Query</li><li>Semantic models</li><li>Row-level security</li><li>Paginated and drill-through reports</li>
-    <li>SQL</li><li>Advanced Excel and VBA</li><li>Power Automate</li><li>Power Apps</li><li>SharePoint and Microsoft Lists</li><li>Microsoft Teams and Outlook</li>
-    <li>Microsoft Fabric <em>hands-on</em></li><li>Snowflake <em>exposure</em></li><li>Python <em>in Power BI reporting</em></li><li>Microsoft Copilot <em>with manual checking</em></li><li>Google Workspace</li>
-    <li>Autotask</li><li>ServiceNow</li><li>Procura</li><li>Q-care</li>
-  </ul>
-</section>
+  <section>
+    <h2>Dashboard samples</h2>
+    <p class="sub">Illustrative only — built with made-up sample data to show layout and measures, not real client figures.</p>
+    <div class="dash">
+      <div class="panel">
+        <div class="ph"><span class="ttl">SLA performance</span><span class="tag">Sample</span></div>
+        <div class="kpis">
+          <div class="kpi"><div class="n">94%</div><div class="l">met SLA</div></div>
+          <div class="kpi"><div class="n">312</div><div class="l">tickets closed</div></div>
+          <div class="kpi"><div class="n">3.1 h</div><div class="l">avg first response</div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="ph"><span class="ttl">Open tickets by team</span><span class="tag">Sample</span></div>
+        <div class="bars">
+          <div class="bar"><span>Field</span><span class="track"><span class="fill" style="width:82%"></span></span><span>41</span></div>
+          <div class="bar"><span>Remote</span><span class="track"><span class="fill" style="width:64%"></span></span><span>32</span></div>
+          <div class="bar"><span>Projects</span><span class="track"><span class="fill" style="width:46%"></span></span><span>23</span></div>
+          <div class="bar"><span>Hardware</span><span class="track"><span class="fill" style="width:30%"></span></span><span>15</span></div>
+          <div class="bar"><span>Onboarding</span><span class="track"><span class="fill" style="width:18%"></span></span><span>9</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="note">Sample data for demonstration. Real client dashboards are confidential.</div>
+  </section>
 
-<section>
-  <span class="eyebrow">Education</span>
-  <div class="edu">
-    <div><b>Data Analytics Diploma</b> (SCQF Level 8 apprenticeship), Microtech Group and QA Scotland, 2025–2026. Forecasting, statistics, predictive modelling and Python.</div>
-    <div><b>Bachelor of Engineering, Computer Engineering</b>, S.L.I.E.T., India, 2011–2014 (WES-assessed)</div>
-    <div><b>Post-Graduate Certificate, Wireless Information Networking</b>, Fleming College, Ontario, 2015–2016</div>
-    <div><b>Diploma, Computer Science and Engineering</b>, Thapar Polytechnic College, India</div>
-    <div class="muted">Preparing for Microsoft PL-300 (Power BI Data Analyst).</div>
-  </div>
-</section>
+  <section>
+    <h2>Tools &amp; skills</h2>
+    <div class="skills">
+      <div class="sk">
+        <div class="h">Business intelligence &amp; reporting</div>
+        <div class="list"><span>Power BI Desktop &amp; Service</span><span>DAX</span><span>Power Query</span><span>Semantic models</span><span>Row-level security</span><span>Paginated &amp; drill-through reports</span></div>
+      </div>
+      <div class="sk">
+        <div class="h">Data &amp; querying</div>
+        <div class="list"><span>SQL</span><span>Advanced Excel</span><span>VBA</span><span>Data validation &amp; reconciliation</span><span>Data profiling</span></div>
+      </div>
+      <div class="sk">
+        <div class="h">Microsoft 365 &amp; automation</div>
+        <div class="list"><span>Power Automate</span><span>Power Apps</span><span>SharePoint</span><span>Microsoft Lists</span><span>Teams</span><span>Outlook</span><span>Approved Microsoft Copilot (manual checking)</span></div>
+      </div>
+      <div class="sk">
+        <div class="h">Systems &amp; other</div>
+        <div class="list"><span>Autotask</span><span>ServiceNow</span><span>Procura</span><span>Q-care</span><span>Google Workspace</span><span>Python (studied in Data Analytics Diploma)</span></div>
+      </div>
+    </div>
+  </section>
 
-<footer>Diagrams show real workflows. Dashboard panels use sample data because client data is confidential.</footer>
+  <section>
+    <h2>Education &amp; certification</h2>
+    <div class="edu">
+      <div class="ed"><div><b>Data Analytics Diploma</b> (SCQF Level 8 apprenticeship) — Microtech Group &amp; QA Scotland. Forecasting, statistics, predictive modelling and Python.</div><div class="d">2025 – 2026</div></div>
+      <div class="ed"><div><b>Post-Graduate Certificate, Wireless Information Networking</b> — Fleming College, Ontario</div><div class="d">2015 – 2016</div></div>
+      <div class="ed"><div><b>Bachelor of Engineering, Computer Engineering</b> — S.L.I.E.T., India (WES-assessed)</div><div class="d">2011 – 2014</div></div>
+      <div class="ed"><div><b>Diploma, Computer Science &amp; Engineering</b> (3-year) — Thapar Polytechnic College, India</div><div class="d">2008 – 2011</div></div>
+      <div class="ed"><div><b>Microsoft PL-300 (Power BI Data Analyst)</b> — preparing (not yet certified)</div><div class="d">In progress</div></div>
+    </div>
+  </section>
+
+  <footer>
+    Harmanpreet Singh · Chestermere, AB · Canadian citizen · <a href="mailto:harman15608@gmail.com">harman15608@gmail.com</a> · +1 672-878-2400
+  </footer>
 
 </div>
-
 </body>
 </html>
